@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "736232877480",
+    "project_id": "face-detection-31aa7",
+    "storage_bucket": "face-detection-31aa7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:736232877480:android:7db2c6b6a82c73e892c19d",
+        "android_client_info": {
+          "package_name": "com.starkindustries.face_detection"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyDi2ljUCE37HKMpJv5Xan36ccE01p7kY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
