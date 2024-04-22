@@ -144,4 +144,13 @@ public class LogInDatabaseHandler extends SQLiteOpenHelper {
         }
         return null;
     }
+    public int getRegisteredCount()
+    {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("Select * from "+Keys.LOGIN_TABLE,null);
+        if(cursor!=null)
+            cursor.moveToFirst();
+        return cursor.getCount();
+    }
 }

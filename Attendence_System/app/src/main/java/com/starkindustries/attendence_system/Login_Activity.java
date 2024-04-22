@@ -46,6 +46,7 @@ public AppCompatButton send_email,signin;
         auth=FirebaseAuth.getInstance();
         store=FirebaseFirestore.getInstance();
         handler=new LogInDatabaseHandler(Login_Activity.this);
+        handler.getRegisteredCount();
         binding.password.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent event) {

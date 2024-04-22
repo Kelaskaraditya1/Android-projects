@@ -11,7 +11,6 @@ public class Contact
      this.name=name;
      this.number=number;
  }
-
     public void setImage(int image) {
         this.image = image;
     }

@@ -19,6 +19,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.starkindustries.attendence_system.Database.LogInDatabaseHandler;
 import com.starkindustries.attendence_system.databinding.ActivityMainBinding;
 import com.starkindustries.attendence_system.Keys.Keys;
 
@@ -34,6 +35,7 @@ public FirebaseAuth auth;
 public FirebaseFirestore store;
 public DocumentReference refrence;
 public String user_id;
+public LogInDatabaseHandler handler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +50,8 @@ public String user_id;
         binding.name.startAnimation(alpha_animation);
         preferences = getSharedPreferences(Keys.SHARED_PREFRANCE_NAME,MODE_PRIVATE);
         editor = preferences.edit();
+        handler=new LogInDatabaseHandler(MainActivity.this);
+        handler.getRegisteredCount();
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

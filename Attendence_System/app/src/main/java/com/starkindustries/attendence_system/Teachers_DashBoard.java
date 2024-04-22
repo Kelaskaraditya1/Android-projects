@@ -10,6 +10,7 @@ import android.view.View;
 
 import com.google.firebase.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
+import com.starkindustries.attendence_system.Database.LogInDatabaseHandler;
 import com.starkindustries.attendence_system.Keys.Keys;
 import com.starkindustries.attendence_system.databinding.ActivityTeachersDashBoardBinding;
 
@@ -18,6 +19,7 @@ public class Teachers_DashBoard extends AppCompatActivity {
     public SharedPreferences preferences;
     public SharedPreferences.Editor edit;
     public FirebaseAuth auth;
+    public LogInDatabaseHandler handler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,12 +28,15 @@ public class Teachers_DashBoard extends AppCompatActivity {
         auth= FirebaseAuth.getInstance();
         preferences=getSharedPreferences(Keys.SHARED_PREFRANCE_NAME,MODE_PRIVATE);
         edit=preferences.edit();
+        handler=new LogInDatabaseHandler(Teachers_DashBoard.this);
+        handler.getRegisteredCount();
         binding.logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 Intent inext = new Intent(Teachers_DashBoard.this,Login_Activity.class);
                 edit.putBoolean(Keys.FLAG,false);
+                edit.apply();
                 startActivity(inext);
             }
         });
