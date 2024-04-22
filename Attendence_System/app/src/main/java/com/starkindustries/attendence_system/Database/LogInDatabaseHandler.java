@@ -12,6 +12,7 @@ import com.starkindustries.attendence_system.Keys.Keys;
 import com.starkindustries.attendence_system.Model.Student;
 import com.starkindustries.attendence_system.Model.User;
 
+import java.security.Key;
 import java.util.ArrayList;
 public class LogInDatabaseHandler extends SQLiteOpenHelper {
     public ArrayList<Student> students_list;
@@ -152,5 +153,52 @@ public class LogInDatabaseHandler extends SQLiteOpenHelper {
         if(cursor!=null)
             cursor.moveToFirst();
         return cursor.getCount();
+    }
+    public void update_name(String name,String tid)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(Keys.NAME,name);
+        db.update(Keys.LOGIN_TABLE,values, Keys.USERNAME+"=?",new String[]{tid});
+    }
+    public void update_tid(String tid,String old_tid)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(Keys.USERNAME,tid);
+        db.update(Keys.LOGIN_TABLE,values,Keys.USERNAME+"=?",new String[]{old_tid});
+    }
+    public boolean check_tid(String tid)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(Keys.LOGIN_TABLE,new String[]{Keys.USERNAME,Keys.PASSWORD,Keys.NAME,Keys.USER_TYPE},Keys.USERNAME+"=?",new String[]{tid},null,null,null);
+        if(cursor!=null&&cursor.getCount()!=0) {
+            cursor.moveToFirst();
+            return true;
+        }
+        return false;
+    }
+    public boolean check_password(String password)
+    {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.query(Keys.LOGIN_TABLE,new String[]{Keys.USERNAME,Keys.PASSWORD,Keys.NAME,Keys.USER_TYPE},Keys.PASSWORD+"=?",new String[]{password},null,null,null);
+        if((cursor!=null)&&(cursor.getCount()!=0))
+        {
+            cursor.moveToFirst();
+            return true;
+        }
+        return false;
+    }
+    public void update_password(String old_password,String new_password)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(Keys.PASSWORD,new_password);
+        db.update(Keys.LOGIN_TABLE,values,Keys.PASSWORD+"=?",new String[]{old_password});
+    }
+    public void getName(String id)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.query(Keys.LOGIN_TABLE,new String[]{Keys.USERNAME,Keys.PASSWORD,Keys.NAME,Keys.USER_TYPE},Keys.USERNAME+"=?",new String[]{id},null,null,null);
     }
 }

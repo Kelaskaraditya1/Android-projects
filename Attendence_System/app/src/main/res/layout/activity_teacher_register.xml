@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Teacher_Register"
+        tools:context=".Activity.Teacher_Register"
         android:background="@drawable/background">
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -53,14 +53,14 @@
                         android:layout_weight="1"
                         android:textStyle="bold">
                     </androidx.appcompat.widget.AppCompatTextView>
-                    <androidx.appcompat.widget.AppCompatImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/teachers_profile_image"
                         android:layout_width="match_parent"
                         android:layout_height="100dp"
                         android:src="@drawable/teacher"
                         android:layout_weight="1"
                         android:layout_marginTop="10dp">
-                    </androidx.appcompat.widget.AppCompatImageView>
+                    </de.hdodenhof.circleimageview.CircleImageView>
                 </androidx.appcompat.widget.LinearLayoutCompat>
             </androidx.appcompat.widget.LinearLayoutCompat>
             <com.google.android.material.textfield.TextInputLayout

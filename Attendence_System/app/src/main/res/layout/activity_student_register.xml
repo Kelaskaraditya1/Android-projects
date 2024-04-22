@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Student_Register"
+        tools:context=".Activity.Student_Register"
         android:background="@drawable/background">
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -43,14 +43,6 @@
                     android:layout_weight="1"
                     android:textStyle="bold">
                 </androidx.appcompat.widget.AppCompatTextView>
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/profile_image"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:src="@drawable/student"
-                    android:layout_weight="1"
-                    android:layout_marginTop="10dp">
-                </androidx.appcompat.widget.AppCompatImageView>
             </androidx.appcompat.widget.LinearLayoutCompat>
         </androidx.appcompat.widget.LinearLayoutCompat>
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -60,7 +52,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintVertical_bias="0.85"
+            app:layout_constraintVertical_bias="0.5"
             android:orientation="vertical"
             android:layout_margin="5dp">
             <com.google.android.material.textfield.TextInputLayout

@@ -6,7 +6,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Login_Activity"
+        tools:context=".Activity.Login_Activity"
         android:background="@drawable/background">
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -83,7 +83,7 @@
                     android:layout_marginBottom="15dp"
                     android:drawableStart="@drawable/user"
                     android:drawablePadding="10dp"
-                    android:hint="Enter your Username/Email"
+                    android:hint="Enter your Student/Teacher ID"
                     android:textAppearance="@color/black"
                     android:textColor="@color/black"
                     android:textColorHint="@color/black"

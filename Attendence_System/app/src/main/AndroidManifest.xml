@@ -15,49 +15,49 @@
         android:theme="@style/Theme.Attendence_System"
         tools:targetApi="31">
         <activity
-            android:name=".Student_Dashboard"
+            android:name=".Activity.Student_Dashboard"
             android:exported="false" />
         <activity
             android:name=".Student_Entry_Database"
             android:exported="false" />
         <activity
-            android:name=".Update_Profile"
+            android:name=".Activity.Update_Profile"
             android:exported="false" />
         <activity
-            android:name=".Teachers_DashBoard"
+            android:name=".Activity.Teachers_DashBoard"
             android:exported="false" />
         <activity
-            android:name=".Teacher_Register"
+            android:name=".Activity.Teacher_Register"
             android:exported="false" />
         <activity
             android:name=".Teacher_Register_Activity"
             android:exported="false" />
         <activity
-            android:name=".Photos_Upload_Activity"
+            android:name=".Activity.Photos_Upload_Activity"
             android:exported="false" />
         <activity
             android:name=".DashBoard_Activity"
             android:exported="false" />
         <activity
-            android:name=".Student_Profile"
+            android:name=".Activity.Student_Profile"
             android:exported="false" />
         <activity
-            android:name=".User_Activity"
+            android:name=".Activity.User_Activity"
             android:exported="false" />
         <activity
             android:name=".User_Type"
             android:exported="false" />
         <activity
-            android:name=".Student_Register"
+            android:name=".Activity.Student_Register"
             android:exported="false" />
         <activity
             android:name=".HomeScreen"
             android:exported="false" />
         <activity
-            android:name=".Login_Activity"
+            android:name=".Activity.Login_Activity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

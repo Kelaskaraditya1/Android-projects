@@ -32,4 +32,12 @@ public class Keys
     public static final String TEACHERS_PROFILE_IMAGE="teachers_profile_image.jpg";
     public static final String LOGIN_TABLE="Login_Table";
     public static final String LOGIN_DATABASE="Login_Database";
+    public static final int CAMERA_REQUEST_CODE=105;
+    public static final int GALLERY_REQUEST_CODE=110;
+    public static final String EMAIL_VERIFICATION_STATUS="Email_Verification_Status";
+    public static final String FALSE="false";
+    public static final String TRUE="true";
+    public static final String PROFILE_IMAGE_PATH="image_path";
+    public static final String STUDENT_PROFILE_DATABASE="Student_Profile_Database";
+    public static final String STUDENT_PROFILE_TABLE="Student_Profile_Table";
 }
